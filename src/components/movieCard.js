@@ -8,7 +8,8 @@ class MovieCard extends React.Component {
         const imgUrl = thumbnailUrl + poster_path
         return(
             <div className="movieCard">
-            <img src= {imgUrl} alt= {title} width="200" />
+            {/* <div className="movieCardInfo"><p>Hi there!</p></div> */}
+            <img className="movieCardimg"src= {imgUrl} alt= {title}/>
             </div>
         )
     }

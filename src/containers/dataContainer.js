@@ -39,8 +39,7 @@ componentDidMount() {
 
     return (
       <div>
-        <h1>DataContainer!</h1>
-      <div className="movieCards">
+      <div className="overview">
       {data && data.map(dataFromState => <MovieCard key={dataFromState.id} {...dataFromState}/>)}
       </div>
       </div>
