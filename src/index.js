@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom'
 import registerServiceWorker from './registerServiceWorker'
 
 // Styling
-// import './css/index.css'
+import './styling/css/index.css'
 
 // Pages + Nav
 import DataContainer from './containers/dataContainer'
