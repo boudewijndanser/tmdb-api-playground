@@ -1,0 +1,28 @@
+{
+  "name": "tmdb-api-playground",
+  "version": "0.0.1",
+  "description": "Having fun with the TMDB API",
+  "repository": "https://github.com/boudewijndanser/tmdb-api-playground",
+  "author": "Boudewijn Danser <helpdesk@boudewijndanser.nl>",
+  "license": "MIT",
+  "private": false,
+  "main": "src/index.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.16.3",
+    "history": "^4.7.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "request": "^2.87.0",
+    "superagent": "^3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "sass" : "sass --watch src/styles/sass:src/styles/css",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
