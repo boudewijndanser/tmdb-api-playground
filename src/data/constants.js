@@ -12,4 +12,4 @@ export const largeCoverUrl = 'https://image.tmdb.org/t/p/w500/'
 
 // Settings 
 
-export const thumbnailsToShow = 10
+export const thumbnailsToShow = 12

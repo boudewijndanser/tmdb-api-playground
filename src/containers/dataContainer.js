@@ -1,11 +1,14 @@
 import * as React from 'react'
 import { apiKey, appendCredits, movieDetailUrl, searchUrl, thumbnailsToShow } from '../data/constants'
 import MovieCard from '../components/movieCard'
+let array = []
 
 class DataContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      loading: true,
+      moviesToMap:null,
       searchId:'',
       api: {
         resultPage: '',
@@ -14,13 +17,10 @@ class DataContainer extends React.Component {
         results: []
       },
       dataContainer: {
-        searchId: null,
         totalPages: 0,
         currentPage: null
-      },
-      status: {
-        loading: true
       }
+      
     }
   }
   
@@ -49,23 +49,25 @@ class DataContainer extends React.Component {
 
   dispatchData = (data) => {
     // Setting all the data received from TMDB API in the state for later reference
-    console.log('Hello...')
+    // temp fix until I am able to ...spread it into results/ the state
+    array = array.concat(data.results)
     this.setState({
       api: { 
         resultPage: data.page,
         totalPages: data.total_pages,
         totalResults: data.total_results,
-        results: this.state.api.results, ...data.results
-        //this.state.api.results, ...data.results
+        results: array
       }
     })
     
-    if (this.state.dataContainer.totalPages === 0) {
+    if (this.state.api.resultPage === this.state.api.totalPages) {
       // If there is nothing, setup the basics based on the API numbers
       this.setState({
         dataContainer: {
           totalPages: Math.ceil(data.total_results / thumbnailsToShow),
           currentPage: 1
+        
+          
         }
       })
     } 
@@ -80,7 +82,16 @@ class DataContainer extends React.Component {
 
     }
     else {
+      // const offset = this.state.dataContainer.currentPage * thumbnailsToShow
+      this.setState({
+        moviesToMap: this.state.api.results.slice((this.state.dataContainer.currentPage-1)*thumbnailsToShow, this.state.dataContainer.currentPage * thumbnailsToShow)
+      })
+      console.log('moviesToMap: ',this.state.moviesToMap)
       console.log('Start rendering stuff allready!')
+
+      this.setState({
+        loading: false
+      })
     }
   }
 
@@ -90,22 +101,19 @@ class DataContainer extends React.Component {
 
 
   componentDidMount() {
-    if (this.state.status.loading === true) {
+    if (this.state.loading === true) {
       this.searchMovieKeyword('180547','1')
       }
   }
   
   render() {
-    if (!this.state.api) return null
-
-    const { results } = this.state.api
-    const { loading } = this.state.status
+    if (this.state.moviesToMap === null) return null
 
     return (
       <div>
       <div className="overview">
-      {loading && <p>Please hold...</p>}
-      {!loading && results && results.map(dataFromState => <MovieCard key={dataFromState.id} {...dataFromState} parentFunction={this.loadDetailsOf}/>)}
+      {this.state.loading && <p>Please hold...</p>}
+      {!this.state.loading && this.state.moviesToMap && this.state.moviesToMap.map(dataFromState => <MovieCard key={dataFromState.id} {...dataFromState} parentFunction={this.loadDetailsOf}/>)}
       </div>
       </div>
     )
