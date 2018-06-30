@@ -5,6 +5,7 @@ import MovieCard from '../components/movieCard'
 class DataContainer extends React.Component {
   constructor(props) {
     super(props)
+    // this.handleClick = this.handleClick.bind(this);
     this.state = {
       data: null
     }
@@ -13,7 +14,7 @@ class DataContainer extends React.Component {
 searchMovieKeyword = (dispatchData) => {
   return fetch(searchUrl)
     .then(response => response.json())
-    .then(json => json.results)
+    .then(json => json)
     .then(data => dispatchData(data))
     .then(console.log('Got the data!'))
     .catch(err => alert(err)) // Make decent art function / display
@@ -21,7 +22,11 @@ searchMovieKeyword = (dispatchData) => {
 
 dispatchData = (data) => {
   this.setState({
-    data
+    resultPage: data.page,
+    totalPages: data.total_pages,
+    totalResults: data.total_results,
+    results: data.results
+
   })
   console.log(this.state)
 }
@@ -31,16 +36,22 @@ componentDidMount() {
     this.searchMovieKeyword(this.dispatchData)
     }
   }
-
+  
+  loadDetailsOf(id) {
+    console.log('You clicked movie with id: ',id);
+  }
   render() {
-    if (this.state.data === null) return null
+    if (!this.state.results) return null
 
-    const { data } = this.state
+    const { results, totalResults } = this.state
 
     return (
       <div>
+        <div>
+          <p>Movies found:{totalResults}</p>
+        </div>
       <div className="overview">
-      {data && data.map(dataFromState => <MovieCard key={dataFromState.id} {...dataFromState}/>)}
+      {results && results.map(dataFromState => <MovieCard key={dataFromState.id} {...dataFromState} parentFunction={this.loadDetailsOf}/>)}
       </div>
       </div>
     )
