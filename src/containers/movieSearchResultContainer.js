@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { apiKey, appendCredits, movieDetailUrl, searchUrl, thumbnailsToShow } from '../data/constants'
-import MovieCard from '../components/movieCard'
+import { apiKey, searchUrl, thumbnailsToShow, thumbnailUrl } from '../data/constants'
+import MovieOverview from '../components/movieOverview'
+
 let array = []
 
-class DataContainer extends React.Component {
+class MovieSearchResultContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -23,18 +24,6 @@ class DataContainer extends React.Component {
       
     }
   }
-  
-  loadDetailsOf = (movieId) => {
-    console.log('You clicked movie with id: ',movieId);
-    const combinedUrl = movieDetailUrl+movieId+'?api_key='+apiKey+appendCredits
-    return fetch(combinedUrl)
-    .then(response => response.json())
-    .then(json => json)
-    .then(data => this.dispatchData2(data))
-    .then(console.log('Got the data!'))
-    .catch(err => alert(err)) // Make decent art function / display
-  }
-
   searchMovieKeyword = (searchId, page) => {
     const fetchUrl = searchUrl+'?api_key='+apiKey+'&sort_by=popularity.desc&include_adult=true&include_video=true&with_keywords='+searchId+'&page='+page
     this.setState({
@@ -95,14 +84,9 @@ class DataContainer extends React.Component {
     }
   }
 
-  dispatchData2 = (data) => {
-    console.log(data)
-  }
-
-
   componentDidMount() {
     if (this.state.loading === true) {
-      this.searchMovieKeyword('180547','1')
+      this.searchMovieKeyword(this.props.match.params.id,'1')
       }
   }
   
@@ -111,13 +95,11 @@ class DataContainer extends React.Component {
 
     return (
       <div>
-      <div className="overview">
-      {this.state.loading && <p>Please hold...</p>}
-      {!this.state.loading && this.state.moviesToMap && this.state.moviesToMap.map(dataFromState => <MovieCard key={dataFromState.id} {...dataFromState} parentFunction={this.loadDetailsOf}/>)}
-      </div>
+        <h1>Movie Search Results</h1>
+        <div><MovieOverview moviesToMap={this.state.moviesToMap} url={thumbnailUrl}/></div>
       </div>
     )
   }
 }
 
-export default DataContainer
+export default MovieSearchResultContainer

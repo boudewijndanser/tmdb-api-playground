@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Roboto+Condensed:400,700');
+
+.navBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background-color: $color-text;
+    z-index: 999;
+
+    &Content {
+        height:111px;
+        margin:0 auto;
+        width:1000px;
+        display:flex;
+        align-items:center;
+        will-change:height;
+        padding: 15px;
+    }
+
+    li {
+        padding: 24px;
+        text-align: center;
+        font-size: 1.8em;
+        flex: 1;
+        font-family: 'Roboto Condensed', sans-serif;
+        text-decoration: none;
+        color: $color-accent;
+    }
+}
