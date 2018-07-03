@@ -4,6 +4,7 @@
 ## Contents
 - [Description](#description)
 - [Wishlist](#wishlist)
+- [Todo](#todo)
 
 ### Description
 I am a big movie fan and am just finding out how awesome API's are. To me they are a really nice way to get cool content/ data about lots of different subjects and give you the chance to play around with that data in your front-end.
@@ -29,3 +30,7 @@ These are the things I want to practice /improve / try
 - Start with SASS
 - Better structure / overview of CSS
 - Responsive / use the whole screen on desktop
+
+#### Todo
+- Look into caching data for faster (re)loading
+- API calls to backend?
