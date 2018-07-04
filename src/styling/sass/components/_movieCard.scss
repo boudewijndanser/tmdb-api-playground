@@ -1,0 +1,31 @@
+.movieCard {
+    width: 200px;
+    border-radius: .5rem .5rem .5rem .5rem;
+    cursor: pointer;
+    background-color: $color-accent;
+
+    &:hover {
+        // transform: translateY(-.5rem);
+        // box-shadow: 0 0 2rem 0 rgba(black, .1);
+        .movieCardimg {
+            opacity: 0; 
+        }
+
+        movieCardInfo {
+            display: inline;
+            margin: 5px;
+        }
+    }
+
+    &img {
+        display: block;
+        padding: 0px;
+        border-radius: .5rem .5rem .5rem .5rem;
+    }
+
+    &Info {
+        // display: none;
+        
+    }
+    
+}

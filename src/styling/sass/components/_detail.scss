@@ -1,0 +1,57 @@
+.movieDetail {
+    display: block;
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.title h1 {
+    font-size: 24px;
+}
+
+.singleColumn {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    z-index: 0;
+    
+}
+
+.primaryContent {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    z-index: 1;
+}
+
+.posterLeft {
+    display: block;
+    position: relative;
+    z-index: 2;
+    
+}
+
+.coverImg {
+    border-radius: 0.3rem;
+}
+.contentRight { 
+    display: flex;
+    min-height: 450px;
+}
+
+.contentRight {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    width: 700px;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+.overviewInfo {
+    width: 100%;
+}
