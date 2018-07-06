@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css?family=Cabin|Roboto+Condensed:400,700");
+@import url("https://fonts.googleapis.com/css?family=Cabin|Roboto+Condensed:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -95,36 +96,74 @@ body {
     padding: 0px;
     border-radius: .5rem .5rem .5rem .5rem; }
 
-.detail {
-  position: fixed;
-  right: 0;
-  width: 40%;
-  height: 100%;
-  border-left: .1rem solid lightgray; }
-  .detail__img {
-    display: block;
-    width: 100%; }
-  .detail__header {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem;
-    background: #f5f5f5; }
-  .detail__title {
-    flex-grow: 1;
-    font-size: 4rem;
-    font-weight: 700;
-    color: #21D17A; }
-  .detail__release {
-    flex-grow: 1;
-    opacity: .6;
-    font-weight: 500;
-    line-height: 5rem;
-    text-align: right; }
-  .detail__director {
-    width: 100%; }
-  .detail__synopsis {
-    padding: 2rem;
-    line-height: 1.5; }
+p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
+  color: #091C24; }
+
+.movieDetail {
+  display: block; }
+
+.title {
+  width: 100%;
+  margin-bottom: 30px;
+  display: block; }
+
+.title h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 45px;
+  color: white;
+  font-weight: 700; }
+
+.releaseDate h3 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  opacity: 0.6;
+  color: white; }
+
+.tagline h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  color: #091C24;
+  opacity: 0.4; }
+
+.singleColumn {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  z-index: 0; }
+
+.primaryContent {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  z-index: 1;
+  background-color: #3eacdb; }
+
+.posterLeft {
+  display: block;
+  position: relative;
+  z-index: 2; }
+
+.coverImg {
+  border-radius: 0.3rem; }
+
+.contentRight {
+  display: flex;
+  min-height: 450px; }
+
+.contentRight {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  width: 700px;
+  box-sizing: border-box;
+  padding-left: 40px; }
+
+.overviewInfo {
+  width: 100%; }
 
 .navBar {
   position: fixed;
