@@ -95,7 +95,7 @@ class MovieSearchResultContainer extends React.Component {
 
     return (
       <div>
-        <h1>Movie Search Results</h1>
+        {/* <h1>Movie Search Results</h1> */}
         <div><MovieOverview moviesToMap={this.state.moviesToMap} url={thumbnailUrl}/></div>
       </div>
     )

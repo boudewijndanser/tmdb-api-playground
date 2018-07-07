@@ -1,31 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Roboto+Condensed:400,700');
+
+h6 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 0.9em;
+    color: $color-highlight;
+    margin-bottom: 8px;
+}
+
+h4 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.0em;
+    color: $color-accent;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.3em;
+    color: $color-detail-font;
+    margin-bottom: 8px;
+}
+
 .movieCard {
+    position: relative;
     width: 200px;
+    height: 300px;
     border-radius: .5rem .5rem .5rem .5rem;
     cursor: pointer;
-    background-color: $color-accent;
 
-    &:hover {
-        // transform: translateY(-.5rem);
-        // box-shadow: 0 0 2rem 0 rgba(black, .1);
-        .movieCardimg {
-            opacity: 0; 
-        }
-
-        movieCardInfo {
-            display: inline;
-            margin: 5px;
-        }
+    &:hover .overlay {
+        opacity: 1;
     }
-
-    &img {
+    
+    .img {
         display: block;
-        padding: 0px;
+        width: 100%;
+        height: auto;
         border-radius: .5rem .5rem .5rem .5rem;
     }
 
-    &Info {
-        // display: none;
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: $color-text;
+        border-radius: .5rem .5rem .5rem .5rem;
         
-    }
+      }
+
+      .figcaption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
     
 }
