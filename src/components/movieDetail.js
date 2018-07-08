@@ -1,33 +1,16 @@
 import React from 'react'
+import MoviePrimaryContent from './moviePrimaryContent'
+import MovieCast from './movieCast'
 
 const movieDetail = (props) => {
-    console.log('Data from movieDetail: ',props.detailObject)
+    
     return (
-        <div className="movieDetal">
+        <div className="movieDetail">
         <div className="singleColumn">
-        <div className="primaryContent">
-        <div className="posterLeft">
-            <img className="coverImg" src= {`${props.coverUrl}${props.detailObject.poster_path}`} alt= {props.title} width="300px" height="450px"/> 
+        <MoviePrimaryContent detailObject={props.detailObject} />
         </div>
-        <div className="contentRightWrapper">
-        <div className="contentRight">
-        <div className="title">
-            <h1>{props.detailObject.title}</h1>
-            </div>
-            <div className="tagline">
-            <h2>{props.detailObject.tagline}</h2>
-        </div>
-        <span className="releaseDate">
-            <h3>{props.detailObject.release_date}</h3>
-        </span>
-        
-        <div className="overviewInfo">
-            <p>{props.detailObject.overview}</p>
-        </div>
-
-        </div>
-        </div>
-        </div>
+        <div className="movieCast">
+        <MovieCast cast={props.detailObject.credits.cast} />
         </div>
         </div>
     )

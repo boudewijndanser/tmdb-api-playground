@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Roboto+Condensed:400,700');
+
+h6 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 0.9em;
+    color: $color-highlight;
+    margin-bottom: 8px;
+}
+
+h4 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.0em;
+    color: $color-accent;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.3em;
+    color: $color-detail-font;
+    margin-bottom: 8px;
+}
+
+.personCard {
+    position: relative;
+    width: 140px;
+    box-sizing: border-box;
+    background-color: $color-item-white;
+    border: 1px solid $color-item-light-grey;
+    padding-bottom: 14px;
+
+ 
+    
+    .personImg {
+        display: block;
+        width: 100%;
+        height: 100%
+    }
+
+      .figcaption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    
+}
