@@ -1,0 +1,10 @@
+.movieCast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.7rem, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    justify-items: stretch;
+    align-items: start;
+    padding: 2rem 2rem;
+    width: 100%;
+}

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { apiKey, appendCredits, largeCoverUrl, movieDetailUrl, thumbnailUrl } from '../data/constants'
+import { apiKey, appendCredits, movieDetailUrl, } from '../data/constants'
 import MovieDetail from '../components/movieDetail'
 class MovieDetailContainer extends React.Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class MovieDetailContainer extends React.Component {
     if (this.state.detailObject === null) return null
     return (
       <div>
-        <MovieDetail thumbUrl={thumbnailUrl} coverUrl={largeCoverUrl} detailObject={this.state.detailObject} />
+        <MovieDetail detailObject={this.state.detailObject} />
       </div>
     )
   }
