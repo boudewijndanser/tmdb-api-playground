@@ -10,6 +10,7 @@ export const appendCredits = '&append_to_response=credits'
 export const thumbnailUrl = 'https://image.tmdb.org/t/p/w200/'
 export const largeCoverUrl = 'https://image.tmdb.org/t/p/w500/'
 export const personThumbnailUrl = 'https://image.tmdb.org/t/p/w138_and_h175_face/'
+export const backgroundPosterUrl = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'
 
 // Settings 
 
