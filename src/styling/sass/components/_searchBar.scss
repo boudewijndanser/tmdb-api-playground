@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Roboto+Condensed:400,700');
+
+.searchBar{
+    display: block;
+    
+}
+
+.innerBar {
+    width: 100%;
+    height: 46px;
+    background-color: $color-item-white;
+    border-bottom: 1px solid $color-item-light-grey;
+}

@@ -7,10 +7,8 @@ const PersonCard = (props) => {
             <img className="personImg"src= {`${props.url}${props.profile_path}`} alt= {props.name} />
             
                 <figcaption className="figcaption">
-                    {/* <p><h6>Character:</h6>
                     <h5>{props.character}</h5>
-                    <h6>Actor:</h6>
-                    <h5>{props.name}</h5></p> */}
+                    <h6>{props.name}</h6>
                 </figcaption>
                 </a>
         </figure>
