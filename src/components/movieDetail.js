@@ -8,10 +8,12 @@ const movieDetail = (props) => {
     
     return (
         <div className="movieDetail">
-            <div className="singleColumn">
-                <img className="backgroundImg"src= {`${backgroundPosterUrl}${props.detailObject.backdrop_path}`} alt= {props.detailObject.title} /> 
-                <MoviePrimaryContent detailObject={props.detailObject} />
-                <div className="backgroundColor"></div>
+                <div className="singleColumn">
+                    <div className="contentInner">
+                    <img className="backgroundImg"src= {`${backgroundPosterUrl}${props.detailObject.backdrop_path}`} alt= {props.detailObject.title} /> 
+                    <MoviePrimaryContent detailObject={props.detailObject} />
+                    <div className="backgroundColor"></div>
+                </div>
             </div>
             <div className="castAndFacts">
                 <div className="movieCastWrapper">
